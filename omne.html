@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200&display=swap" rel="stylesheet">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.js"></script>
+    <title>MichalHrbáčekOmně</title>
+
+    <style>
+      
+      body {
+        background-color:rgb(255, 255, 255) ;
+        margin: 0px;
+        font-family: 'Advent Pro', sans-serif;
+        
+      }
+      canvas{
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+cont {
+  width: 100vw;
+  color: rgb(255, 255, 255);
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+h1{
+font-size: 15vh;
+line-height: 15vh;
+font-weight: 200;
+}
+h4{
+font-size: 6vh;
+line-height: 15vh;
+font-weight: 200;
+}
+h2{
+font-weight: 200;
+font-size: 10vh;
+}
+header {
+    grid-column: 2 / 5;
+    font-size: 2.5rem;
+    padding: 1rem;
+    
+  }
+
+  section {
+    grid-column: 3 / 11;
+    padding: 1rem;
+    font-size: 1.25rem;
+    margin: auto;
+    text-align: center;
+    display: table;
+    line-height: 1.5;
+    margin-bottom: 150px;
+    width: 100%;
+    height: 1vh;
+  }
+  .design{
+    float: left;
+    line-height: 1px;
+    position: relative;
+    top: -13vh;
+    
+  }
+  a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  span{
+    font-size: 5vh;top: -10vh;position: relative;
+  }
+
+
+
+.table{
+  margin: auto;
+  text-align: center;
+  
+}
+.columns {
+  display: inline-block;
+  width: 33%;
+  
+  margin: auto;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 3vh;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+
+.price {
+  list-style-type: none;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  line-height: 2.5em;
+  background: white;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(255, 255, 255, 0)
+}
+
+.price .header {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: rgb(255, 255, 255);
+ 
+  font-size: 5vh;
+  font-weight:800;
+}
+* {box-sizing: border-box}
+
+.storage {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.html {width: 90%; background: rgb(20, 20, 20);}
+.css {width: 80%; background: rgb(20, 20, 20);}
+.js {width: 10%; background: rgb(20, 20, 20);}
+.c {width: 50%; background: rgb(20, 20, 20);}
+@media only screen and (max-width: 600px) {
+  
+  h1 {
+    font-size: 8vh;
+    line-height: 8vh;
+    float: left;
+  }
+  h2{ 
+    font-size: 8vh;
+}
+h4{ 
+    font-size: 4vh;
+    line-height: 10vh;
+}
+span{
+  top:1vh;
+}
+  .columns {
+    width: 100%;
+  }
+  .grey img{
+    width: 100%;
+  }
+}
+
+    </style>
+
+    
+  </head>
+
+  <body>
+    <canvas id="bg"></canvas>
+    <cont>
+    <header>
+      <a href="index.html">
+<h1 style="padding-bottom: 40vh;">MICHAL <br> HRBÁČEK <br> <span> O MNĚ</span></h1>
+</a>
+</header>
+
+<section style="color:black;">
+  <h4 style="background: white;">Jsem studentem na střední škole filmové,
+    multimediální a počítačových technologií v České republice.
+    Doufám, že se někdy stanu full-stack developerem aplikací a webových stránek.
+    Zde bych chtěl představit svou práci a úkázat 
+    své schopnosti. <img src="" alt=""> </h4>
+</section>
+
+<section style="background: white;" >
+  <h2 style="color: black;">Mé Záliby</h2>
+
+  <div class="table">
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background: rgb(255, 255, 255);"></li>
+        <li class="grey"><img src="technology.png" alt="" style="width: 33%;"></li>
+        <li class="grey">Technologie</li>
+        <li>Technologie ovlivňujě všechny</li>
+        <li>Je to magie budoucnosti</li>
+        <li>⠀</li>
+        <li>⠀</li>
+        
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background: rgb(255, 255, 255);"></li>
+        <li class="grey"><img src="design.png" alt="" style="width: 33%;"></li>
+        <li class="grey">Design</li>
+        <li>Vytvářím osobitý design</li>
+        <li>B&W</li>
+        <li>⠀</li>
+        <li>⠀</li>
+        
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background: rgb(255, 255, 255);"></li>
+        <li class="grey"><img src="game.png" alt="" style="width: 33%;"></li>
+        <li class="grey">Hry</li>
+        <li>Rád hraju hry</li>
+        <li>Baví mně vyvíjet hry</li>
+        <li>⠀</li>
+        <li>⠀</li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+<section style="background: white;color: black;">
+  <h2>Seznam Dovedností</h2>
+  <p>HTML</p>
+<div class="storage">
+  <div class="skills html">90%</div>
+</div>
+
+<p>CSS</p>
+<div class="storage">
+  <div class="skills css">80%</div>
+</div>
+
+<p>JavaScript</p>
+<div class="storage">
+  <div class="skills js">10%</div>
+</div>
+
+<p>C#</p>
+<div class="storage">
+  <div class="skills c">50%</div>
+</div>
+</section>
+
+
+
+
+    </cont>
+    
+
+    <script type="module">
+    
+      
+      var renderer = new THREE.WebGLRenderer({canvas: document.querySelector('#bg'),});
+      renderer.setSize( window.innerWidth, window.innerHeight );
+
+     
+      document.body.appendChild( renderer.domElement );
+
+
+      
+     
+      var scene = new THREE.Scene();
+
+      
+      var fov = 80;
+      var aspect = window.innerWidth / window.innerHeight;
+      var nearClippingPlane = 0.1;
+      var farClippingPlane = 30;
+      var camera = new THREE.PerspectiveCamera( fov, aspect, nearClippingPlane, farClippingPlane );
+      camera.position.set( 0, 0, 20 );
+
+      
+      
+      var scene = new THREE.Scene(); 
+      scene.background = new THREE.Color( 0xffffff );
+     
+      
+
+      
+      
+
+      
+      
+var trianglegeometry = new THREE.TorusKnotGeometry( 6, 2, 100, 16 );
+      var trianglematerial = new THREE.MeshStandardMaterial({ color: 0x292929, wireframe: true });
+      var triangle = new THREE.Mesh(trianglegeometry, trianglematerial);
+
+scene.add(triangle);
+
+
+
+      var ambientLight = new THREE.AmbientLight( 0x000000, 1.0 );  
+      scene.add( ambientLight );
+
+    
+      var directionalLight = new THREE.DirectionalLight( 0x000000, 0.4 );
+      directionalLight.position.set( 0, 10, 0 );
+      scene.add( directionalLight );
+
+
+      function animate() {
+        
+        requestAnimationFrame( animate );
+        
+    
+        triangle.rotation.x += 0.002;
+        triangle.rotation.y -= 0.009;
+
+        renderer.render( scene, camera );
+      }
+      animate();
+    
+    </script>
+  </body>
+
+</html>
