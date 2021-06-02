@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200&display=swap" rel="stylesheet">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.js"></script>
+    <title>MichalHrbáčekDesign</title>
+
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      body {
+        background-color:rgb(10, 10, 10) ;
+        margin: 0px;
+        font-family: 'Advent Pro', sans-serif;
+        
+      }
+      canvas{
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+cont {
+  width: 100vw;
+  color: rgb(255, 255, 255);
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+h1{
+font-size: 15vh;
+line-height: 15vh;
+font-weight: 200;
+}
+h4{
+font-size: 6vh;
+line-height: 15vh;
+font-weight: 200;
+}
+h2{
+font-weight: 200;
+font-size: 10vh;
+}
+header {
+    grid-column: 2 / 5;
+    font-size: 2.5rem;
+    padding: 2rem;
+    margin-bottom: 250px;
+  }
+
+  section {
+    grid-column: 2 / 11;
+    padding: 1rem;
+    font-size: 1.25rem;
+    margin: auto;
+    text-align: center;
+    display: table;
+    line-height: 1.5;
+    margin-bottom: 350px;
+    width: 100%;
+    height: 1vh;
+  }
+  .design{
+    float: left;
+    line-height: 1px;
+    position: relative;
+    top: -13vh;
+    
+  }
+  a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  span{
+    font-size: 5vh;top: -10vh;position: relative;
+  }
+
+
+
+.table{
+  margin: auto;
+  text-align: center;
+  
+}
+.columns {
+  display: inline-block;
+  width: 33%;
+  
+  margin: auto;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 3vh;
+  z-index: 1;
+  transition: 0.3s;
+}
+.columns:hover{
+  box-shadow: 0 2px 8px 0 rgb(0, 0, 0);
+  transform: translateY(1%);
+}
+
+.price {
+  list-style-type: none;
+  
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  line-height: 2.5em;
+  background: white;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0)
+}
+
+.price .header {
+  background-color: rgba(17, 17, 17, 0);
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: rgba(238, 238, 238, 0);
+ 
+  font-size: 5vh;
+  font-weight:800;
+}
+
+
+
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 600px) {
+  
+  h1 {
+    font-size: 8vh;
+    line-height: 8vh;
+    float: left;
+  }
+  h2{ 
+    font-size: 4vh;
+}
+h4{ 
+    font-size: 4vh;
+    line-height: 10vh;
+}
+span{
+  top:1vh;
+}
+  .columns {
+    width: 100%;
+  }
+  .design{
+    top: -7vh;
+  }
+}
+
+
+    </style>
+
+    
+  </head>
+
+  <body>
+    <canvas id="bg"></canvas>
+    <cont>
+    <header>
+      <a href="index.html">
+<h1 style="padding-bottom: 40vh;">MICHAL <br> HRBÁČEK <br> <span> DESIGN</span></h1>
+</a>
+</header>
+
+<section>
+  <div class="table">
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background: rgb(255, 255, 255);"></li>
+        <li class="grey">Free Design</li>
+        <li>Volný design je in</li>
+        <li>Buď free, buď in!</li>
+        <li>⠀</li>
+        <li>⠀</li>
+        
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background: rgb(24, 24, 24);"></li>
+        <li class="grey">Osobitý</li>
+        <li>Originální Design</li>
+        <li>Svěží vzhled</li>
+        <li>⠀</li>
+        <li>⠀</li>
+        
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background: rgb(255, 255, 255);"></li>
+        <li class="grey">3D</li>
+        <li>3D grafika</li>
+        <li>3D modely</li>
+        <li>⠀</li>
+        <li>⠀</li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="color:black;">
+  <h1 style="background: white;">Userfriendly design je priorita</h1>
+</section>
+
+
+<section style="margin-bottom: 100px;">
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="jwlry.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="ring.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="detailj.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="ringdet.png" style="width:100%">
+  </div>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+        </section>
+
+
+    </cont>
+    
+    <script>
+      var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
+
+
+    </script>
+    <script type="module">
+    
+      
+      var renderer = new THREE.WebGLRenderer({canvas: document.querySelector('#bg'),});
+      renderer.setSize( window.innerWidth, window.innerHeight );
+
+     
+      document.body.appendChild( renderer.domElement );
+
+
+      
+     
+      var scene = new THREE.Scene();
+
+      
+      var fov = 80;
+      var aspect = window.innerWidth / window.innerHeight;
+      var nearClippingPlane = 0.1;
+      var farClippingPlane = 20;
+      var camera = new THREE.PerspectiveCamera( fov, aspect, nearClippingPlane, farClippingPlane );
+      camera.position.set( 0, 0, 0 );
+
+      
+      var geometry = new THREE.TorusGeometry(10, 3.3, 19, 50);
+      var scene = new THREE.Scene(); 
+      scene.background = new THREE.Color( 0xffffff );
+     
+      var material = new THREE.MeshStandardMaterial( {
+          color: 0x292929, wireframe: true
+      } );
+
+      
+      var mesh = new THREE.Mesh( geometry, material );
+      scene.add( mesh );
+
+      var cubegeometry = new THREE.IcosahedronGeometry(5, 3);
+      var cubematerial = new THREE.MeshStandardMaterial({ color: 0x292929, wireframe: true });
+      var cube = new THREE.Mesh(cubegeometry, cubematerial);
+
+scene.add(cube);
+cube.position.z = 30;
+cube.position.setX(-10);
+      
+var trianglegeometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
+      var trianglematerial = new THREE.MeshStandardMaterial({ color: 0x292929, wireframe: true });
+      var triangle = new THREE.Mesh(trianglegeometry, cubematerial);
+
+scene.add(triangle);
+triangle.position.z = 52;
+triangle.position.setX(15);
+
+var spheregeometry = new THREE.SphereGeometry( 5, 32, 14 );
+      var spherematerial = new THREE.MeshStandardMaterial({ color: 0x292929, wireframe: true });
+      var sphere = new THREE.Mesh(spheregeometry, spherematerial);
+
+scene.add(sphere);
+sphere.position.z = 84;
+sphere.position.setX(-10);
+
+      var ambientLight = new THREE.AmbientLight( 0x000000, 1.0 );  
+      scene.add( ambientLight );
+
+    
+      var directionalLight = new THREE.DirectionalLight( 0x000000, 0.4 );
+      directionalLight.position.set( 0, 10, 0 );
+      scene.add( directionalLight );
+      function moveCamera()
+      {
+        var t = document.body.getBoundingClientRect().top;
+
+
+
+        camera.position.z = t * -0.015;
+      }
+      document.body.onscroll = moveCamera;
+
+      function animate() {
+        
+        requestAnimationFrame( animate );
+        
+      
+        mesh.rotation.x += 0.005;
+        mesh.rotation.y += 0.005;
+        cube.rotation.x += 0.001;
+        cube.rotation.y -= 0.005;
+        cube.rotation.z -= 0.004;
+        triangle.rotation.x += 0.002;
+        triangle.rotation.y -= 0.009;
+        sphere.rotation.x += 0.002;
+        sphere.rotation.y -= 0.009;
+
+        renderer.render( scene, camera );
+      }
+      animate();
+    
+    </script>
+  </body>
+
+</html>
